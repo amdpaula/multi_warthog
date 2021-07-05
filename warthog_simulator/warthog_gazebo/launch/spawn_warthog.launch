@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Configuration of Warthog which you would like to simulate.
+       See warthog_description for details. -->
+  <arg name="config" default="base" />
+  <arg name="x" default="0" />
+  <arg name="y" default="0" />
+  <arg name="z" default="1" />
+  <arg name="yaw" default="0" />
+  <arg name="ns0" default="warthog" />
+
+  <!-- Control node -->
+  <include file="$(find warthog_control)/launch/control.launch">
+    <arg name="ns"    value="$(arg ns0)"/>
+  </include>
+
+  <!-- Load Warthog's description. -->
+  <include file="$(find warthog_description)/launch/description.launch">
+    <arg name="config" value="$(arg config)" />
+    <arg name="ns"    value="$(arg ns0)" />
+  </include>
+  <!-- joint_state_publisher is needed to publish the suspension joints. -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ns="$(arg ns0)" />
+
+  <!-- Teleop node -->
+  <include file="$(find warthog_control)/launch/teleop.launch">
+    <arg name="ns"    value="$(arg ns0)" />
+  </include>
+  <!-- Spawn Warthog -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" ns="$(arg ns0)"
+	      args="-urdf -model $(arg ns0) -param /$(arg ns0)/robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
+</launch>
