@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>warthog_nav</name>
+  <name>multi_warthog_nav</name>
   <version>0.0.5</version>
   <description>Localization and navigation for the Warthog.</description>
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>

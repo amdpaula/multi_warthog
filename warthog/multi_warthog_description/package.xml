@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>warthog_description</name>
+  <name>multi_warthog_description</name>
   <version>0.1.3</version>
   <description>URDF robot description for Warthog</description>
 

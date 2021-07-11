@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(warthog_control)
+project(multi_warthog_control)
 
 find_package(catkin REQUIRED COMPONENTS roslaunch)
 
