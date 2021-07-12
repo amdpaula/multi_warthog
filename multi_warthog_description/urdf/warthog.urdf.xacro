@@ -58,7 +58,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${PI/2}"/>
         <geometry>
-          <mesh filename="package://warthog_description/meshes/wheel.stl" />
+          <mesh filename="package://multi_warthog_description/meshes/wheel.stl" />
         </geometry>
         <material name="dark_grey" />
       </visual>
@@ -101,14 +101,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://warthog_description/meshes/tracks.dae" />
+          <mesh filename="package://multi_warthog_description/meshes/tracks.dae" />
         </geometry>
         <material name="dark_grey" />
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://warthog_description/meshes/tracks_collision.stl" />
+          <mesh filename="package://multi_warthog_description/meshes/tracks_collision.stl" />
         </geometry>
       </collision>
     </link>
@@ -187,35 +187,35 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${side*PI/2}"/>
         <geometry>
-          <mesh filename="package://warthog_description/meshes/rocker.stl" />
+          <mesh filename="package://multi_warthog_description/meshes/rocker.stl" />
         </geometry>
         <material name="black"><color rgba="0.15 0.15 0.15 1.0" /></material>
       </visual>
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${side*PI/2}"/>
         <geometry>
-          <mesh filename="package://warthog_description/meshes/fenders.stl" />
+          <mesh filename="package://multi_warthog_description/meshes/fenders.stl" />
         </geometry>
         <material name="yellow"><color rgba="0.95 0.816 0.082 1.0" /></material>
       </visual>
       <visual>
         <origin xyz="0 ${side*-0.0244} 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://warthog_description/meshes/light.stl" />
+          <mesh filename="package://multi_warthog_description/meshes/light.stl" />
         </geometry>
         <material name="white"><color rgba="0.9 0.9 0.9 1.0" /></material>
       </visual>
       <visual>
         <origin xyz="0 ${side*-0.0244} 0" rpy="0 0 ${side*PI}"/>
         <geometry>
-          <mesh filename="package://warthog_description/meshes/light.stl" />
+          <mesh filename="package://multi_warthog_description/meshes/light.stl" />
         </geometry>
         <material name="red"><color rgba="0.9 0.0 0.0 1.0" /></material>
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 ${side*PI/2}"/>
         <geometry>
-          <mesh filename="package://warthog_description/meshes/fenders.stl" />
+          <mesh filename="package://multi_warthog_description/meshes/fenders.stl" />
         </geometry>
       </collision>
     </link>
@@ -254,21 +254,21 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://warthog_description/meshes/chassis.stl" />
+        <mesh filename="package://multi_warthog_description/meshes/chassis.stl" />
       </geometry>
       <material name="black"><color rgba="0.15 0.15 0.15 1.0" /></material>
     </visual>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://warthog_description/meshes/e-stop.stl" />
+        <mesh filename="package://multi_warthog_description/meshes/e-stop.stl" />
       </geometry>
       <material name="red"><color rgba="0.9 0.0 0.0 1.0" /></material>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://warthog_description/meshes/chassis-collision.stl" />
+        <mesh filename="package://multi_warthog_description/meshes/chassis-collision.stl" />
       </geometry>
     </collision>
   </link>
@@ -286,21 +286,21 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://warthog_description/meshes/diff-link.stl" />
+        <mesh filename="package://multi_warthog_description/meshes/diff-link.stl" />
       </geometry>
       <material name="light_grey" />
     </visual>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://warthog_description/meshes/susp-link.stl" />
+        <mesh filename="package://multi_warthog_description/meshes/susp-link.stl" />
       </geometry>
       <material name="light_grey" />
     </visual>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://warthog_description/meshes/susp-link.stl" />
+        <mesh filename="package://multi_warthog_description/meshes/susp-link.stl" />
       </geometry>
       <material name="light_grey" />
     </visual>
@@ -318,12 +318,12 @@
     <child link="imu_link" />
   </joint>
   <!-- Bring in simulation data for Gazebo. -->
-  <xacro:include filename="$(find warthog_description)/urdf/warthog.gazebo" />
+  <xacro:include filename="$(find multi_warthog_description)/urdf/warthog.gazebo" />
 
   <!-- Optional standard accessories, including their simulation data. The rendering
        of these into the final description is controlled by optenv variables, which
        default each one to off.-->
-  <xacro:include filename="$(find warthog_description)/urdf/accessories.urdf.xacro" />
+  <xacro:include filename="$(find multi_warthog_description)/urdf/accessories.urdf.xacro" />
 
   <!-- Optional custom includes. -->
   <xacro:include filename="$(optenv WARTHOG_URDF_EXTRAS empty.urdf)" />

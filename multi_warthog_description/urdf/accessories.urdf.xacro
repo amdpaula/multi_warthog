@@ -13,7 +13,9 @@
   <xacro:include filename="accessories/sick_lms1xx_mount.urdf.xacro" />
   <xacro:if value="$(optenv WARTHOG_LASER 0)">
     <sick_lms1xx_mount prefix="$(optenv WARTHOG_LASER_MOUNT front)"
-                       topic="$(optenv WARTHOG_LASER_TOPIC front/scan)"/>
+                       topic="$(optenv WARTHOG_LASER_TOPIC front/scan)"
+                       min_angle="-1.7"
+                       max_angle="1.7" />
 
     <joint name="$(optenv WARTHOG_LASER_MOUNT front)_laser_mount_joint" type="fixed">
       <origin xyz="$(optenv WARTHOG_LASER_OFFSET 0.77 0 0.15)"
@@ -26,7 +28,9 @@
   <xacro:include filename="accessories/sick_lms1xx_mount.urdf.xacro" />
   <xacro:if value="$(optenv WARTHOG_LASER 0)">
     <sick_lms1xx_mount prefix="$(optenv WARTHOG_LASER_MOUNT back)"
-                       topic="$(optenv WARTHOG_LASER_TOPIC back/scan)"/>
+                       topic="$(optenv WARTHOG_LASER_TOPIC back/scan)"
+                       min_angle="-1.7"
+                       max_angle="1.7" />
 
     <joint name="$(optenv WARTHOG_LASER_MOUNT back)_laser_mount_joint" type="fixed">
       <origin xyz="$(optenv WARTHOG_LASER_OFFSET -0.77 0 0.15)"
