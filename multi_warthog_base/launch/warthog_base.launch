@@ -7,6 +7,8 @@
   <arg name="y" default="0" />
   <arg name="z" default="1" />
   <arg name="yaw" default="0" />
+  <arg name="use_move_base" default="true" />
+  <arg name="use_fake_localization" default="true" />
   <arg name="ns0" default="warthog" />
 
   <!-- Control node -->
@@ -29,4 +31,14 @@
   <!-- Spawn Warthog -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" ns="$(arg ns0)"
 	      args="-urdf -model $(arg ns0) -param /$(arg ns0)/robot_description -x $(arg x) -y $(arg y) -z $(arg z) -R 0 -P 0 -Y $(arg yaw)" />
+
+  <!-- Start the warthog navigation. -->
+  <include file="$(find multi_warthog_nav)/launch/warthog_nav.launch">
+    <arg name="ns"    value="$(arg ns0)"/>
+    <arg name="x"     value="$(arg x)"/>
+    <arg name="y"     value="$(arg y)"/>
+    <arg name="z"     value="$(arg z)"/>
+    <arg name="use_move_base"  value="$(arg use_move_base)"/>
+    <arg name="use_fake_localization" value="$(arg use_fake_localization)"/>
+  </include>
 </launch>

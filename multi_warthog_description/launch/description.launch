@@ -4,9 +4,9 @@
   <arg name="ns"     default="warthog" />
 
   <param name="/$(arg ns)/robot_description"
-         command="$(find warthog_description)/scripts/env_run
-                  $(find warthog_description)/urdf/configs/$(arg config)
-                  $(find xacro)/xacro '$(find warthog_description)/urdf/warthog.urdf.xacro'
+         command="$(find multi_warthog_description)/scripts/env_run
+                  $(find multi_warthog_description)/urdf/configs/$(arg config)
+                  $(find xacro)/xacro '$(find multi_warthog_description)/urdf/warthog.urdf.xacro'
                   '--inorder' 'namespace:=$(arg ns)'" />
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg ns)">
