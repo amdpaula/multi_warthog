@@ -77,8 +77,8 @@
     </joint>
     <gazebo reference="${prefix}_${side}_wheel_link">
       <selfCollide>false</selfCollide>
-      <mu1>0.5</mu1>
-      <mu2>0.5</mu2>
+      <mu1>1</mu1>
+      <mu2>1</mu2>
       <kp value="10000000.0" />
       <kd value="1.0" />
       <fdir1 value="1 0 0" />

@@ -3,3 +3,6 @@
 # in the URDF suffice to define this config.
 
 WARTHOG_LASER=1
+WARTHOG_BULKHEAD=1
+WARTHOG_TRACKS=0
+WARTHOG_GENERATOR=0
